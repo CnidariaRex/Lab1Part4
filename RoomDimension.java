@@ -18,7 +18,7 @@ public class RoomDimension
 
 	public String toString()
 	{
-		return "Length: " + this.length + "Width: " + this.width;
+		return " Length: " + this.length + " Width: " + this.width;
 	}
 	
 }

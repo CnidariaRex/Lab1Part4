@@ -30,11 +30,12 @@ public class RoomCarpet
 	public RoomDimension size;
 	public double carpetCost;
         public CarpetType Type;
+        public Delivery thisDelivery;
  
-	public RoomCarpet(RoomDimension dim, String material)
+	public RoomCarpet(RoomDimension dim, String material, Delivery newDelivery)
 	{
 		size = dim;
-                //Type.carpet_type = material;
+                thisDelivery = newDelivery;
                 switch(material){
                     case "Silk":
                         Type = CarpetType.SILK;
@@ -57,11 +58,11 @@ public class RoomCarpet
 
 	public double getTotalCost()
 	{
-		return (carpetCost * size.getArea());
+		return (carpetCost * size.getArea() + thisDelivery.GetDeliveryCost());
 	}
 
 	public String toString()
 	{
-		return this.Type.toString() + "Size: " + this.size.toString() + "Carpet Cost: " + this.carpetCost;
+		return "Carpet type of: " + this.Type.toString() + " Size: " + this.size.toString() + " Carpet Cost: " + this.carpetCost + "With delivery options: " + this.thisDelivery.toString();
 	}
 }
