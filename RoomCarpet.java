@@ -12,18 +12,15 @@ public class RoomCarpet
             public String toString() {
                 switch (this) {
                   case SILK:
-                       System.out.println("Silk: " + carpet_type);
-                       break;
+                       return "Silk ";
                   case LINEN:
-                       System.out.println("Linen: " + carpet_type);
-                       break;
+                       return "Linen ";
                   case WOOL:
-                       System.out.println("Wool: " + carpet_type);
-                       break;
+                       return "Wool ";
                   case PERSIAN:
-                       System.out.println("Persian: " + carpet_type);
+                      return "Persian ";
                  }
-           return super.toString();
+           return "Comleted.";
           }
         };   
 
