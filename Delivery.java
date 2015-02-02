@@ -11,21 +11,19 @@ public class Delivery {
                     this.deliv_cost = deliv_cost;
             }
         
+            @Override
             public String toString() {
                 switch (this) {
                   case TWODAY:
-                       System.out.println("Two day delivery cost: " + deliv_cost);
-                       break;
+                      return " Two day delivery cost: " + deliv_cost;
                   case THREEDAY:
-                       System.out.println("Three day delivery cost: "  + deliv_cost);
-                       break;
+                      return " Three day delivery cost: "  + deliv_cost;
                   case SUPERSAVER:
-                       System.out.println("Supersaver delivery cost: "  + deliv_cost);
-                       break;
+                      return " Supersaver delivery cost: "  + deliv_cost;
                   case NORMAL:
-                       System.out.println("Normal delivery cost: "  + deliv_cost);
+                      return " Normal delivery cost: "  + deliv_cost;
                  }
-           return super.toString();
+                return "Completed.";
           }
         };
 
@@ -53,5 +51,10 @@ public class Delivery {
     public double GetDeliveryCost()
     {
         return new_delivery.deliv_cost;
+    }
+    
+    public String toString()
+    {
+        return new_delivery.toString();
     }
 }

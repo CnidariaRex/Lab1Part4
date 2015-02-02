@@ -8,6 +8,7 @@ public class RoomCarpet
                     this.carpet_type = carpet_type;
             }
         
+            @Override
             public String toString() {
                 switch (this) {
                   case SILK:
@@ -63,6 +64,6 @@ public class RoomCarpet
 
 	public String toString()
 	{
-		return "Carpet type of: " + this.Type.toString() + " Size: " + this.size.toString() + " Carpet Cost: " + this.carpetCost + "With delivery options: " + this.thisDelivery.toString();
+		return "Carpet type of: " + this.Type.toString() + this.size.toString() + " Carpet Cost: " + this.carpetCost + this.thisDelivery.toString();
 	}
 }
