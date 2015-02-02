@@ -1,15 +1,58 @@
 public class RoomCarpet
 {
+        public enum CarpetType {
+            SILK("Silk"), LINEN("Linen"), WOOL("Wool"), PERSIAN("Persian");
+            public String carpet_type;
+
+            private CarpetType(String carpet_type) {
+                    this.carpet_type = carpet_type;
+            }
+        
+            public String toString() {
+                switch (this) {
+                  case SILK:
+                       System.out.println("Silk: " + carpet_type);
+                       break;
+                  case LINEN:
+                       System.out.println("Linen: " + carpet_type);
+                       break;
+                  case WOOL:
+                       System.out.println("Wool: " + carpet_type);
+                       break;
+                  case PERSIAN:
+                       System.out.println("Persian: " + carpet_type);
+                 }
+           return super.toString();
+          }
+        };   
+
 
 	public RoomDimension size;
 	public double carpetCost;
-        public String material;
-
-	public RoomCarpet(RoomDimension dim, double cost, String carpet_material)
+        public CarpetType Type;
+ 
+	public RoomCarpet(RoomDimension dim, String material)
 	{
 		size = dim;
-		carpetCost = cost;
-                material = carpet_material;
+                //Type.carpet_type = material;
+                switch(material){
+                    case "Silk":
+                        Type = CarpetType.SILK;
+                        carpetCost = 30;
+                        break;
+                    case "Linen":
+                        Type = CarpetType.LINEN;
+                        carpetCost = 8;
+                        break;
+                    case "Wool":
+                        Type = CarpetType.WOOL;
+                        carpetCost = 6.5;
+                        break;
+                    case "Persian":
+                        Type = CarpetType.PERSIAN;
+                        carpetCost = 45.76;
+                        break;
+                }
 	}
 
 	public double getTotalCost()
@@ -19,6 +62,6 @@ public class RoomCarpet
 
 	public String toString()
 	{
-		return "Size: " + this.size.toString() + "Carpet Cost: " + this.carpetCost + "using material: " + this.material;
+		return this.Type.toString() + "Size: " + this.size.toString() + "Carpet Cost: " + this.carpetCost;
 	}
 }
